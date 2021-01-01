@@ -1,0 +1,109 @@
+body{
+
+}
+.navbar{
+    height: 70px;
+}
+.logo{
+    color: #cce5ff;
+    font-size: 25px;
+    padding-left: 60px;
+}
+.logo_link{
+    color: #1b1e21;
+}
+.logo_link:hover{
+    color: red;
+}
+
+a{
+    text-decoration: none;
+    color: #1b1e21;
+}
+
+a:hover{
+    text-decoration: none;
+    color: red;
+}
+.wrap-card{
+  margin: 110px;
+
+
+}
+.img-cart:hover{
+    border: 1px solid black;
+
+    transition: border 4s;
+}
+
+.card{
+    margin-left: 26px;
+}
+
+.card-body{
+    width: 350px;
+}
+.link_for_img{
+    font-size: 20px;
+    color: #1b1e21;
+}
+.link_for_img:hover{
+    color: red;
+}
+
+.edit_link{
+    color: red;
+}
+
+.edit_link{
+    color: mediumslateblue;
+}
+
+.link_update{
+    color: #6c757d;
+    margin-left: 13px;
+}
+#login-form{
+    padding-top: 90px;
+}
+
+.form_info{
+    color: #545b62;
+    font-size: 13px;
+}
+
+#id_username{
+    width: 300px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 12px;
+}
+
+#id_password{
+     width: 300px;
+	font-size: 13px;
+	padding: 6px 0 4px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+	border-radius: 12px;
+}
+.wrap_form_zag{
+   margin-top: 24px;
+}
+
+.wrap-form{
+    margin: 20px;
+}
+.wrap-detile{
+    margin: 25px;
+}
+.zag_detile{
+    margin: 25px;
+}
+
+.photos{
+    width: 500px;
+    height: 500px;
+}
