@@ -31,6 +31,13 @@ class OSAdmin(admin.ModelAdmin):
 class PCAdmin(admin.ModelAdmin):
     list_display = ['name', 'serialNumber','status', 'loc']
 
+@admin.register(TokenModel)
+class TokenModelAdmin(admin.ModelAdmin):
+    list_display = ['name']
 
 
+
+@admin.register(Token)
+class TokenAdmin(admin.ModelAdmin):
+    list_display = ['serialNumber','tokenModel']
 

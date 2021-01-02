@@ -73,3 +73,25 @@ class PC(Product):
 
     def __str__(self):
         return self.serialNumber
+
+
+class TokenModel(ProductModel):
+    firm = models.ForeignKey(Firm, models.CASCADE, verbose_name='Производитель')
+    class Meta:
+        verbose_name = 'Модель Токена'
+        verbose_name_plural = 'Модели токенов'
+
+    def __str__(self):
+        return self.name
+
+
+class Token(Product):
+    tokenModel = models.ForeignKey(TokenModel, models.CASCADE, verbose_name='Модель токена')
+
+    class Meta:
+        verbose_name = 'Токен'
+        verbose_name_plural = 'Токены'
+
+    def __str__(self):
+        return self.serialNumber
+
