@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Список пользователей{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список пользователей</h2>
+  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+         <th>Отчество</th>
+           <th>Телефон</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+     {% for person in persons %}
+      <tbody>
+            <tr>
+                <td>{{person.firstName }}</td>
+                <td> {{person.lastName }} </td>
+                <td> {{person.fatherName }} </td>
+                 <td> {{person.workTelephone }} </td>
+                <td>{{person.email }}</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

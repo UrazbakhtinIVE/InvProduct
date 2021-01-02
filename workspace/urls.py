@@ -4,4 +4,6 @@ from workspace.views import *
 
 urlpatterns = [
     path('', login_required(WorkSpaceView.as_view()), name='workspace'),
+    # path('persons/', login_required(PersonView.as_view()), name='persons'),
+
 ]

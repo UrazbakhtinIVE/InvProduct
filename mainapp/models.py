@@ -74,7 +74,7 @@ class Schedule(models.Model):
 
 class Act(models.Model):
     number = models.CharField(max_length=100, verbose_name="Номер акта", unique=True)
-    person = models.ForeignKey(Person, models.CASCADE, verbose_name="Пользователь")
+    person = models.ForeignKey(Persons, models.CASCADE, verbose_name="Пользователь")
     file = models.FileField(verbose_name='Акт передачи', blank=True)
     date = models.DateField(verbose_name='Дата передачи')
 

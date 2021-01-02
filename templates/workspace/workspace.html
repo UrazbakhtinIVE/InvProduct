@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Рабочие места{% endblock %}
+
+    {% block content %}
+         <div class="wrap-card">
+            <div class="container">
+                <div class="row">
+
+
+
+                    <div class="card" style="width: 14rem;">
+                     <a href="#"><img src="{% static 'img/jurnal.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Журнал принетров</a></p>
+                            </div>
+                    </div>
+
+                    <div class="card" style="width: 14rem;">
+                      <a href="#">  <img src="{% static 'img/pazz.png' %}" class="card-img-top" alt="..."> </a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Совместимость</a></p>
+                            </div>
+                    </div>
+
+                    <div class="card" style="width: 14rem;">
+                      <a href="#"> <img src="{% static 'img/setting.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Ремонт</a></p>
+                            </div>
+                    </div>
+                </div>
+                    </div>
+            </div>
+    {% endblock %}

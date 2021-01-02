@@ -12,8 +12,8 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ['name']
 
 
-@admin.register(Person)
+@admin.register(Persons)
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ['firstName']
+    list_display = ['firstName', 'lastName', 'fatherName']
 
 

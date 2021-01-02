@@ -20,6 +20,18 @@
                             </div>
                     </div>
 
+
+
+                     <div class="card" style="width: 14rem;">
+                       <a href="{% url 'person' %}"> <img src="{% static 'img/users_person_.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Пользователи</a></p>
+                                   <small> Общее колличество: {{ object_list }}</small>
+                            </div>
+                    </div>
+
+
+
                     <div class="card" style="width: 14rem;">
                      <a href="{% url 'workspace' %}"><img src="{% static 'img/pc_.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">

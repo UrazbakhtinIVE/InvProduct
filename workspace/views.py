@@ -1,5 +1,6 @@
+from django.views.generic import *
 
-from django.views.generic import TemplateView
+from personal.models import *
 
 
 class WorkSpaceView(TemplateView):
