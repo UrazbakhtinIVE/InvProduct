@@ -53,7 +53,7 @@ class Product(models.Model):
 class Applications(models.Model):
     number = models.CharField(max_length=100, verbose_name="Номер заявки", unique=True)
     descriptions = models.TextField(verbose_name="Описание")
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField(auto_now_add=True )
     status = models.BooleanField(verbose_name="Выполнена")
 
     class Meta:
@@ -73,9 +73,9 @@ class Schedule(models.Model):
 
 
 class Act(models.Model):
-    number = models.CharField(max_length=100, verbose_name="Номер акта")
+    number = models.CharField(max_length=100, verbose_name="Номер акта", unique=True)
     person = models.ForeignKey(Person, models.CASCADE, verbose_name="Пользователь")
-    file = models.FileField(verbose_name='Акт передачи')
+    file = models.FileField(verbose_name='Акт передачи', blank=True)
     date = models.DateField(verbose_name='Дата передачи')
 
 

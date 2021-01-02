@@ -8,10 +8,15 @@ class MonitorModelAdmin(admin.ModelAdmin):
     list_display = ['name']
 
 
+class MonitorChoiceField(object):
+    pass
+
+
 @admin.register(Monitor)
 class MonitorAdmin(admin.ModelAdmin):
     list_display = ['serialNumber','model', 'status','loc']
 
+  
 @admin.register(StatusWork)
 class StatusWorkAdmin(admin.ModelAdmin):
     list_display = ['name']
@@ -40,4 +45,10 @@ class TokenModelAdmin(admin.ModelAdmin):
 @admin.register(Token)
 class TokenAdmin(admin.ModelAdmin):
     list_display = ['serialNumber','tokenModel']
+
+
+@admin.register(ActWorkSpace)
+class ActWorkSpaceAdmin(admin.ModelAdmin):
+    list_display = ['number']
+
 

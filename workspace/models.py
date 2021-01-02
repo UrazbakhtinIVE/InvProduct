@@ -35,6 +35,9 @@ class Monitor(Product):
         verbose_name = 'Монитор'
         verbose_name_plural = 'Мониторы'
 
+    def __str__(self):
+        return self.serialNumber
+
 
 class PCModel(ProductModel):
     class Meta:
@@ -95,3 +98,15 @@ class Token(Product):
     def __str__(self):
         return self.serialNumber
 
+
+class ActWorkSpace(Act):
+    monitor =models.ForeignKey(Monitor, models.CASCADE, verbose_name='Монитор', blank=True)
+    pc =models.ForeignKey(PC, models.CASCADE, verbose_name='Системный блок', blank=True)
+    token = models.ForeignKey(Token, models.CASCADE, verbose_name='Токен', blank=True)
+
+    class Meta:
+        verbose_name = 'Акт'
+        verbose_name_plural = 'Акты'
+
+    def __str__(self):
+        return self.number

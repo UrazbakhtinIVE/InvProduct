@@ -38,4 +38,4 @@ class Person(models.Model):
         verbose_name_plural = 'Сотрудники'
 
     def __str__(self):
-        return self.fatherName
+        return self.firstName
