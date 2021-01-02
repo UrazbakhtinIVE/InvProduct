@@ -15,3 +15,22 @@ class MonitorAdmin(admin.ModelAdmin):
 @admin.register(StatusWork)
 class StatusWorkAdmin(admin.ModelAdmin):
     list_display = ['name']
+
+
+@admin.register(PCModel)
+class PCModelAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
+@admin.register(OS)
+class OSAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
+@admin.register(PC)
+class PCAdmin(admin.ModelAdmin):
+    list_display = ['name', 'serialNumber','status', 'loc']
+
+
+
+
