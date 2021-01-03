@@ -14,17 +14,17 @@
                 <div class="row">
 
                     <div class="card" style="width: 14rem;">
-                       <a href="{% url 'list_person' %}"> <img src="{% static 'img/checklist.png' %}" class="card-img-top" alt="..."></a>
+                       <a href="{% url 'list_person' %}"> <img src="{% static 'img/contacts.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="{% url 'list_person' %}">Список <br> пользователей</a></p>
-                                   <small> Общее колличество: {{ object_list }}</small>
+                                <p class="card-text"><a class="link_for_img" href="{% url 'list_person' %}">Контакты</a></p>
+
                             </div>
                     </div>
 
                     <div class="card" style="width: 14rem;">
-                       <a href="#"> <img src="{% static 'img/phone.png' %}" class="card-img-top" alt="..."></a>
+                       <a href="{% url 'service_phone' %}"> <img src="{% static 'img/phone.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="#">Сервисные номера </a></p>
+                                <p class="card-text"><a class="link_for_img" href="{% url 'service_phone' %}">Сервисные номера </a></p>
 
                             </div>
                     </div>

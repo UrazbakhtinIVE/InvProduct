@@ -25,4 +25,4 @@ class Room(models.Model):
         db_table = "Room"
 
     def __str__(self):
-        return self.number
+        return self.titul.name

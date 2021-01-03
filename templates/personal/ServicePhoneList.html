@@ -9,26 +9,25 @@
 
     {% block content %}
          <div class="container">
-  <h2>Список пользователей</h2>
-  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+  <h2>Телефоный справочник сменного персонала</h2>
   <table class="table">
     <thead>
       <tr>
         <th>Должность</th>
         <th>Телефона</th>
-
         <th>Email</th>
+        <th>Титул №</th>
+         <th>Месторасположение</th>
       </tr>
     </thead>
-     {% for person in persons %}
+     {% for person in servicePhone %}
       <tbody>
             <tr>
-                <td>{{person.firstName }}</td>
-
-
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{person.name }}</td>
+                <td>{{person.telephone }}</td>
+                <td>{{person.email }}</td>
+                 <td>{{person.room.titul.number }}</td>
+                 <td>{{person.room.titul.name }}</td>
             </tr>
       </tbody>
       {% endfor %}
