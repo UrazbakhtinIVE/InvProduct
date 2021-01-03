@@ -2,6 +2,7 @@ from mainapp.models import *
 
 
 class MonitorModel(ProductModel):
+    image = models.ImageField(verbose_name='Фото', blank=True)
     diagonal = models.IntegerField('Диагональ', blank=True)
     firm = models.ForeignKey(Firm, models.CASCADE, verbose_name='Производитель')
 
@@ -40,14 +41,14 @@ class Monitor(Product):
 
 
 class PCModel(ProductModel):
+    image = models.ImageField(verbose_name='Фото', blank=True)
+
     class Meta:
         verbose_name = 'Модель системного блока'
         verbose_name_plural = 'Модели системных блоков'
 
     def __str__(self):
         return self.name
-
-
 
 
 class OS(models.Model):
@@ -61,12 +62,11 @@ class OS(models.Model):
         return self.name
 
 
-
 class PC(Product):
     name = models.CharField(max_length=100, verbose_name="Имя компьютера")
     HDD = models.IntegerField(verbose_name='Жесктий диск', null=True, blank=True)
     RAM = models.IntegerField(verbose_name='Оперативная память', null=True, blank=True)
-    OS = models.ForeignKey(OS,models.CASCADE, verbose_name='Операционная система')
+    OS = models.ForeignKey(OS, models.CASCADE, verbose_name='Операционная система')
     status = models.ForeignKey(StatusWork, models.CASCADE, verbose_name='Статус')
     loc = models.BooleanField(max_length=100, verbose_name='У сотрудника на УД')
 
@@ -80,6 +80,8 @@ class PC(Product):
 
 class TokenModel(ProductModel):
     firm = models.ForeignKey(Firm, models.CASCADE, verbose_name='Производитель')
+    image = models.ImageField(verbose_name='Фото', blank=True)
+
     class Meta:
         verbose_name = 'Модель Токена'
         verbose_name_plural = 'Модели токенов'
@@ -100,9 +102,9 @@ class Token(Product):
 
 
 class ActWorkSpace(Act):
-    monitor =models.ForeignKey(Monitor, models.CASCADE, verbose_name='Монитор', blank=True)
-    pc =models.ForeignKey(PC, models.CASCADE, verbose_name='Системный блок', blank=True)
-    token = models.ForeignKey(Token, models.CASCADE, verbose_name='Токен', blank=True)
+    monitor = models.ForeignKey(Monitor, models.CASCADE, verbose_name='Монитор')
+    pc = models.ForeignKey(PC, models.CASCADE, verbose_name='Системный блок')
+    token = models.ForeignKey(Token, models.CASCADE, verbose_name='Токен')
 
     class Meta:
         verbose_name = 'Акт'

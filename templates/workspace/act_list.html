@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Список  актов{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список актов</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Номер акта</th>
+          <th>Дата</th>
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>Отчество</th>
+      </tr>
+    </thead>
+     {% for a in act %}
+      <tbody>
+            <tr>
+                <td>{{a.number }}</td>
+                <td>{{a.date }}</td>
+                <td>{{a.person.firstName }}</td>
+                <td>{{a.person.lastName }}</td>
+                <td>{{a.person.fatherName }}</td>
+
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

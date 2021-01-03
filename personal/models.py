@@ -38,7 +38,7 @@ class Persons(models.Model):
     lastName = models.CharField(max_length=50, verbose_name='Имя')
     fatherName = models.CharField(max_length=50, verbose_name='Отчество')
     department = models.ManyToManyField(Department, verbose_name='Отдел')
-    # posts = models.ManyToManyField(Post, verbose_name='Должность')
+    posts = models.ManyToManyField(Post, verbose_name='Должность')
     email = models.EmailField(verbose_name="Эл.почта", blank=True)
     photo = models.ImageField(verbose_name="Фото", blank=True)
     workTelephone = models.CharField(max_length=15, verbose_name='Внутрений номер', blank=True)

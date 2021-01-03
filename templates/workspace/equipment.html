@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Оборудование{% endblock %}
+
+    {% block content %}
+         <div class="wrap-card">
+            <div class="container">
+                <div class="row">
+
+                    <div class="card" style="width: 14rem;">
+                     <a href="{% url 'pc' %}"><img src="{% static 'img/PC_computer_desktop_compaq.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'pc' %}">Системные блоки</a></p>
+                            </div>
+                    </div>
+
+                    <div class="card" style="width: 14rem;">
+                      <a href="#">  <img src="{% static 'img/monitorhd.png' %}" class="card-img-top" alt="..."> </a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Мониторы</a></p>
+                            </div>
+                    </div>
+
+
+                    <div class="card" style="width: 14rem;">
+                      <a href="#">  <img src="{% static 'img/laptop.png' %}" class="card-img-top" alt="..."> </a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Ноутбуки</a></p>
+                            </div>
+                    </div>
+
+                     <div class="card" style="width: 14rem;">
+                      <a href="#">  <img src="{% static 'img/flashdrive.png' %}" class="card-img-top" alt="..."> </a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Токены</a></p>
+                            </div>
+                    </div>
+
+                </div>
+                    </div>
+            </div>
+    {% endblock %}
