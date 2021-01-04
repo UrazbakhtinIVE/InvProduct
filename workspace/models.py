@@ -101,14 +101,75 @@ class Token(Product):
         return self.serialNumber
 
 
+class TelephoneModel(ProductModel):
+    firm = models.ForeignKey(Firm, models.CASCADE, verbose_name='Производитель', null=True)
+    image = models.ImageField(verbose_name='Фото', blank=True)
+
+    class Meta:
+        verbose_name = 'Модель телефона'
+        verbose_name_plural = 'Модели телефонов'
+
+    def __str__(self):
+        return self.name
+
+
+class Telephone(Product):
+    modelTelephone = models.ForeignKey(TelephoneModel, verbose_name='Модель телефона', on_delete=models.CASCADE,
+                                       blank=True)
+
+    class Meta:
+        verbose_name = 'Телефон'
+        verbose_name_plural = 'Телефоны'
+
+    def __str__(self):
+        return self.serialNumber
+
+
+class PowerModel(ProductModel):
+    firm = models.ForeignKey(Firm, models.CASCADE, verbose_name='Производитель', null=True)
+    image = models.ImageField(verbose_name='Фото', blank=True)
+
+    class Meta:
+        verbose_name = 'Модель источника бесперебойного питания'
+        verbose_name_plural = 'Модели источников бесперебойного питания'
+
+    def __str__(self):
+        return self.name
+
+
+class Power(Product):
+    powerModel = models.ForeignKey(TelephoneModel, verbose_name='Модель источника бесперебойного писатния',on_delete=models.CASCADE, blank=True)
+
+    class Meta:
+        verbose_name = 'Источник бесперебойного питания'
+        verbose_name_plural = 'Истоники бесперебойного питания'
+
+    def __str__(self):
+        return self.serialNumber
+
+
 class ActWorkSpace(Act):
     monitor = models.ForeignKey(Monitor, models.CASCADE, verbose_name='Монитор')
     pc = models.ForeignKey(PC, models.CASCADE, verbose_name='Системный блок')
     token = models.ForeignKey(Token, models.CASCADE, verbose_name='Токен')
+    telephone = models.ForeignKey(Telephone, verbose_name='Телефон', on_delete=models.CASCADE, blank=True, null=True)
+    power = models.ForeignKey(Power, verbose_name='Источник бесперебойного питания', on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Акт'
         verbose_name_plural = 'Акты'
 
+
     def __str__(self):
         return self.number
+
+
+class WorkSpaceSchedule(Schedule):
+    act = models.ForeignKey(ActWorkSpace, models.CASCADE, verbose_name='Номер акта')
+
+    class Meta:
+        verbose_name = 'Журнал выдачи рабочего места'
+        verbose_name_plural = 'Журналы выдачи рабочих мест'
+
+    def __str__(self):
+        return self.apper

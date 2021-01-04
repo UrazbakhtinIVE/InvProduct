@@ -73,6 +73,11 @@ class Schedule(models.Model):
 
 
 class Act(models.Model):
+    CHOICES = (
+        ('extradition', 'Выдача'),
+        ('pass', 'Сдача'),
+    )
+    type = models.CharField(max_length=20, choices=CHOICES, verbose_name='Тип акта', null=True)
     number = models.CharField(max_length=100, verbose_name="Номер акта", unique=True)
     person = models.ForeignKey(Persons, models.CASCADE, verbose_name="Пользователь", null=True )
     file = models.FileField(verbose_name='Акт передачи', blank=True)

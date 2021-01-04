@@ -47,10 +47,32 @@ class TokenAdmin(admin.ModelAdmin):
     list_display = ['serialNumber','tokenModel']
 
 
+@admin.register(TelephoneModel)
+class  TelephoneModelAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+@admin.register(Telephone)
+class TelephoneAdmin(admin.ModelAdmin):
+    list_display = ['serialNumber','modelTelephone']
+
+
+
+@admin.register(PowerModel)
+class  PowerModelAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+@admin.register(Power)
+class PowerAdmin(admin.ModelAdmin):
+    list_display = ['serialNumber','powerModel']
+
+
+
 @admin.register(ActWorkSpace)
 class ActWorkSpaceAdmin(admin.ModelAdmin):
-    list_display = ['number']
+    list_display = ['number', 'person', 'date']
 
-
+@admin.register(WorkSpaceSchedule)
+class WorkSpaceScheduleAdmin(admin.ModelAdmin):
+    list_display = ['apper','date']
 
 
