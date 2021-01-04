@@ -14,12 +14,22 @@
             <div class="row">
                <h4>Добро пожаловать на сайт InvWeb </h4>
             </div>
-              <div class="col"><p>Если у Вас есть логин и пароль тогда необходимо  <a class="logo_link" href="{% url 'login' %}">авторизироваться</a>  на сайте</p></div>
+
+            <p>Если Вам необходимо узнать информацию о сотруднике предпрития перейдите по ссылке ниже или кликните по иконке</p>
 
 
              <div class="wrap-card">
             <div class="container">
                 <div class="row">
+
+
+                     <div class="card" style="width: 14rem;">
+                       <a href="{% url 'login' %}"> <img src="{% static 'img/log.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'login' %}">Войти</a></p>
+
+                            </div>
+                    </div>
 
                     <div class="card" style="width: 14rem;">
                        <a href="{% url 'list_person' %}"> <img src="{% static 'img/contacts.png' %}" class="card-img-top" alt="..."></a>
