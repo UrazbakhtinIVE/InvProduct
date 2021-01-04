@@ -5,7 +5,6 @@
         {% include 'header.html' %}
     {% endblock %}
 
-    {% block title %}Устройства печати{% endblock %}
 
     {% block content %}
          <div class="wrap-card">
@@ -15,15 +14,16 @@
                     <div class="card" style="width: 14rem;">
                        <a href="#"> <img src="{% static 'img/checklist.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="#">Список принтеров</a></p>
-                                   <small> Общее колличество: {{ object_list }}</small>
+                                <p class="card-text"><a class="link_for_img"href="#">Список картриджей</a></p>
+                                 <small> Общее колличество: {{ object_list }}</small>
+
                             </div>
                     </div>
 
                     <div class="card" style="width: 14rem;">
                      <a href="#"><img src="{% static 'img/jurnal.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="#">Журнал принетров</a></p>
+                                <p class="card-text"><a class="link_for_img" href="#">Журнал картриджей</a></p>
                             </div>
                     </div>
 
@@ -35,9 +35,9 @@
                     </div>
 
                     <div class="card" style="width: 14rem;">
-                      <a href="#"> <img src="{% static 'img/setting.png' %}" class="card-img-top" alt="..."></a>
+                      <a href="#"> <img src="{% static 'img/blood.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="#">Ремонт</a></p>
+                                <p class="card-text"><a class="link_for_img" href="#">На заправку</a></p>
                             </div>
                     </div>
                 </div>

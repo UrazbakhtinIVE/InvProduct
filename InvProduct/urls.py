@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
     path('home/', include('mainapp.urls')),
-    path('printer/', include('printers.urls')),
+    path('print/', include('print.urls')),
     path('persons/',include('personal.urls')),
     path('workspace/', include('workspace.urls')),
 ]

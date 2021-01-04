@@ -15,7 +15,9 @@
                <h4>Добро пожаловать на сайт InvWeb </h4>
             </div>
 
-            <p>Если Вам необходимо узнать информацию о сотруднике предпрития перейдите по ссылке ниже или кликните по иконке</p>
+            <p>Если Вам необходимо узнать информацию о сотруднике предпрития перейдите по ссылке ниже или кликните по иконке <a  href="{% url 'phone_person' %}">Контакты</a> ,
+                если у Вас есть логин и пароль для сайта кликнете по иконке <a href="{% url 'login' %}">Войти</a>
+            </p>
 
 
              <div class="wrap-card">
@@ -26,8 +28,11 @@
                      <div class="card" style="width: 14rem;">
                        <a href="{% url 'login' %}"> <img src="{% static 'img/log.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="{% url 'login' %}">Войти</a></p>
-
+                               {% if user.username %}
+                                <a class="link_for_img" href="{% url 'logout' %}">Выйти</a>
+                                        {% else %}
+                                            <a class="link_for_img" href="{% url 'login' %}">Войти</a>
+                                         {% endif %}
                             </div>
                     </div>
 
