@@ -10,4 +10,5 @@ urlpatterns = [
     path('equipment/pc/model/', login_required(PCModelView.as_view()), name='pc_model'),
     path('equipment/acts/', login_required(ActView.as_view()), name='acts'),
     path('equipment/acts/list/', login_required(ActListView.as_view()), name='acts_list'),
+    path('list/', WorkSpaceListView.as_view(), name='wc_list'),
 ]

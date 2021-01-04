@@ -34,3 +34,11 @@ class PCModelView(ListView):
     template_name = 'workspace/pc_model_list.html'
     queryset = PCModel.objects.all()
     context_object_name = 'pcModel'
+
+
+
+
+class WorkSpaceListView(ListView):
+    template_name = 'workspace/list_workspace.html'
+    queryset =  PC.objects.all()
+    context_object_name = 'ws'

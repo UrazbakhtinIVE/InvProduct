@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Рабочие места{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список Рабочих мест</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Имя компьютера</th>
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>Отчество</th>
+          <th>Телефон</th>
+      </tr>
+    </thead>
+     {% for p in ws %}
+      <tbody>
+            <tr>
+                <td>{{p.name }}</td>
+                <td>{{p.person.firstName }}</td>
+                <td>{{p.person.lastName }}</td>
+                <td>{{p.person.fatherName }}</td>
+                <td>{{p.person.workTelephone }}</td>
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

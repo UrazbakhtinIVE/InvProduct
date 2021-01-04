@@ -40,8 +40,11 @@ class Status(models.Model):
 
 
 class Product(models.Model):
+    person = models.ForeignKey(Persons, models.CASCADE, verbose_name="Пользователь", null=True)
+    date = models.DateField(verbose_name='Дата передачи', null=True)
     category = models.ForeignKey(Category, models.CASCADE, verbose_name="Категория")
     serialNumber = models.CharField(max_length=100, verbose_name="Серийный номер", unique=True)
+    location = models.ForeignKey(Room, models.CASCADE, verbose_name="Месторасположение", null=True)
 
     class Meta:
         abstract = True

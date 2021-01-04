@@ -5,11 +5,9 @@ from locations.models import Room
 
 class Post(models.Model):
     name = models.CharField(max_length=30, verbose_name="Название должности")
-    telephone = models.CharField(max_length=12, verbose_name='Телефон', blank=True)
-    email = models.EmailField(blank=True)
     isChangePost = models.BooleanField(verbose_name='Сменый персонал')
     isVip = models.BooleanField(default=False, verbose_name='Высшее руководство')
-    room = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True )
+    room = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True)
 
     class Meta:
         verbose_name = 'Должность'

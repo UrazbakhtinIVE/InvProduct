@@ -34,7 +34,6 @@ class Printer(Product):
     firm = models.ForeignKey(Firm, models.CASCADE, verbose_name="Прозводитель")
     isColor = models.BooleanField(default=True, verbose_name="Цветной")
     printerStatus = models.ForeignKey(PrinterStatus, models.CASCADE, verbose_name="Статус")
-    printerLocation = models.ForeignKey(Room, models.CASCADE, verbose_name="Месторасположение")
 
 
     class Meta:

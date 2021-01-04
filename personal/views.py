@@ -13,7 +13,3 @@ class PersonListView(ListView):
     queryset = Persons.objects.all()
 
 
-class PostListView(ListView):
-    template_name = 'personal/servicePhoneList.html'
-    context_object_name = 'servicePhone'
-    queryset = Post.objects.filter(isChangePost=True)

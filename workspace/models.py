@@ -30,7 +30,7 @@ class Monitor(Product):
     model = models.ForeignKey(MonitorModel, models.CASCADE, verbose_name='Модель')
     serialNumber = models.CharField(max_length=100, verbose_name='Серийный номер')
     status = models.ForeignKey(StatusWork, models.CASCADE, verbose_name='Статус')
-    loc = models.BooleanField(max_length=100, verbose_name='У сотрудника на УД')
+
 
     class Meta:
         verbose_name = 'Монитор'
@@ -68,7 +68,8 @@ class PC(Product):
     RAM = models.IntegerField(verbose_name='Оперативная память', null=True, blank=True)
     OS = models.ForeignKey(OS, models.CASCADE, verbose_name='Операционная система')
     status = models.ForeignKey(StatusWork, models.CASCADE, verbose_name='Статус')
-    loc = models.BooleanField(max_length=100, verbose_name='У сотрудника на УД')
+
+
 
     class Meta:
         verbose_name = 'Системный блок'

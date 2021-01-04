@@ -14,7 +14,7 @@ class MonitorChoiceField(object):
 
 @admin.register(Monitor)
 class MonitorAdmin(admin.ModelAdmin):
-    list_display = ['serialNumber','model', 'status','loc']
+    list_display = ['serialNumber','model', 'status']
 
   
 @admin.register(StatusWork)
@@ -34,7 +34,7 @@ class OSAdmin(admin.ModelAdmin):
 
 @admin.register(PC)
 class PCAdmin(admin.ModelAdmin):
-    list_display = ['name', 'serialNumber','status', 'loc']
+    list_display = ['name', 'serialNumber','status']
 
 @admin.register(TokenModel)
 class TokenModelAdmin(admin.ModelAdmin):
