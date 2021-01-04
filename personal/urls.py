@@ -5,6 +5,6 @@ from personal.views import *
 
 urlpatterns = [
     path('', login_required(PersonView.as_view()), name='person'),
-    path('list/', PersonListView.as_view(), name='list_person'),
-
+    path('list/', login_required(PersonListView.as_view()), name='list_person'),
+    path('phone/', PersonalTelephoneListView.as_view(), name='phone_person'),
 ]

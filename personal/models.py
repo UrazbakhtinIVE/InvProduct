@@ -6,7 +6,6 @@ from locations.models import Room
 class Post(models.Model):
     name = models.CharField(max_length=30, verbose_name="Название должности")
     isChangePost = models.BooleanField(verbose_name='Сменый персонал')
-    isVip = models.BooleanField(default=False, verbose_name='Высшее руководство')
     room = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True)
 
     class Meta:
@@ -41,7 +40,7 @@ class Persons(models.Model):
     photo = models.ImageField(verbose_name="Фото", blank=True)
     workTelephone = models.CharField(max_length=15, verbose_name='Внутрений номер', blank=True)
     mobileTelephone = models.CharField(max_length=15, verbose_name='Мобильный телефон', blank=True)
-
+    isVip = models.BooleanField(default=False, verbose_name='Высшее руководство')
 
     class Meta:
         verbose_name = 'Сотрудник'

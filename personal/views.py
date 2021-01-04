@@ -13,3 +13,12 @@ class PersonListView(ListView):
     queryset = Persons.objects.all()
 
 
+class PersonalTelephoneListView(ListView):
+    template_name = 'personal/personList.html'
+    context_object_name = 'persons'
+    queryset = Persons.objects.filter(isVip=False)
+
+
+
+
+
