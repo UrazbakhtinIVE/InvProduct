@@ -1,5 +1,7 @@
 from django.db import models
 
+from personal.models import Department
+
 
 class Titul(models.Model):
     number = models.CharField(max_length=20, verbose_name="Номер титула")
@@ -15,7 +17,8 @@ class Titul(models.Model):
 
 
 class Room(models.Model):
-    titul = models.ForeignKey(Titul, models.CASCADE, verbose_name='Номер титула')
+    titul = models.ForeignKey(Titul, on_delete=models.CASCADE, verbose_name="Титул")
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, verbose_name="Отдел", null=True)
     number = models.CharField(max_length=100, verbose_name="Номер помещения")
     floor = models.CharField(max_length=20, verbose_name="Этаж")
 
@@ -25,4 +28,4 @@ class Room(models.Model):
         db_table = "Room"
 
     def __str__(self):
-        return self.titul.name
+        return self.number

@@ -1,12 +1,10 @@
 from django.db import models
 
-from locations.models import Room
-
 
 class Post(models.Model):
     name = models.CharField(max_length=30, verbose_name="Название должности")
     isChangePost = models.BooleanField(verbose_name='Сменый персонал')
-    room = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True)
+    # room = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True)
 
     class Meta:
         verbose_name = 'Должность'
@@ -19,8 +17,6 @@ class Post(models.Model):
 
 class Department(models.Model):
     name = models.CharField(max_length=50, verbose_name="Название отдела")
-
-
 
     class Meta:
         verbose_name = 'Отдел'
@@ -38,8 +34,8 @@ class Persons(models.Model):
     posts = models.ManyToManyField(Post, verbose_name='Должность')
     email = models.EmailField(verbose_name="Эл.почта", blank=True)
     photo = models.ImageField(verbose_name="Фото", blank=True)
-    workTelephone = models.CharField(max_length=15, verbose_name='Внутрений номер', blank=True)
-    mobileTelephone = models.CharField(max_length=15, verbose_name='Мобильный телефон', blank=True)
+    workTelephone = models.CharField(max_length=15, verbose_name='Внутрений номер')
+    mobileTelephone = models.CharField(max_length=15, verbose_name='Мобильный телефон')
     isVip = models.BooleanField(default=False, verbose_name='Высшее руководство')
 
     class Meta:

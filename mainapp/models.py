@@ -1,3 +1,4 @@
+from locations.models import Room
 from personal.models import *
 
 
@@ -40,11 +41,9 @@ class Status(models.Model):
 
 
 class Product(models.Model):
-    person = models.ForeignKey(Persons, models.CASCADE, verbose_name="Пользователь", null=True)
-    date = models.DateField(verbose_name='Дата передачи', null=True)
+    location = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True)
     category = models.ForeignKey(Category, models.CASCADE, verbose_name="Категория")
     serialNumber = models.CharField(max_length=100, verbose_name="Серийный номер", unique=True)
-    location = models.ForeignKey(Room, models.CASCADE, verbose_name="Месторасположение", null=True)
 
     class Meta:
         abstract = True
@@ -56,7 +55,7 @@ class Product(models.Model):
 class Applications(models.Model):
     number = models.CharField(max_length=100, verbose_name="Номер заявки", unique=True)
     descriptions = models.TextField(verbose_name="Описание")
-    date = models.DateField(auto_now_add=True )
+    date = models.DateField(auto_now_add=True)
     status = models.BooleanField(verbose_name="Выполнена")
 
     class Meta:
@@ -82,11 +81,8 @@ class Act(models.Model):
     )
     type = models.CharField(max_length=20, choices=CHOICES, verbose_name='Тип акта', null=True)
     number = models.CharField(max_length=100, verbose_name="Номер акта", unique=True)
-    person = models.ForeignKey(Persons, models.CASCADE, verbose_name="Пользователь", null=True )
     file = models.FileField(verbose_name='Акт передачи', blank=True)
     date = models.DateField(verbose_name='Дата передачи')
 
-
     class Meta:
         abstract = True
-

@@ -31,7 +31,6 @@ class Monitor(Product):
     serialNumber = models.CharField(max_length=100, verbose_name='Серийный номер')
     status = models.ForeignKey(StatusWork, models.CASCADE, verbose_name='Статус')
 
-
     class Meta:
         verbose_name = 'Монитор'
         verbose_name_plural = 'Мониторы'
@@ -66,10 +65,8 @@ class PC(Product):
     name = models.CharField(max_length=100, verbose_name="Имя компьютера")
     HDD = models.IntegerField(verbose_name='Жесктий диск', null=True, blank=True)
     RAM = models.IntegerField(verbose_name='Оперативная память', null=True, blank=True)
-    OS = models.ForeignKey(OS, models.CASCADE, verbose_name='Операционная система')
+    # OS = models.ForeignKey(OS, models.CASCADE, verbose_name='Операционная система')
     status = models.ForeignKey(StatusWork, models.CASCADE, verbose_name='Статус')
-
-
 
     class Meta:
         verbose_name = 'Системный блок'
@@ -139,7 +136,8 @@ class PowerModel(ProductModel):
 
 
 class Power(Product):
-    powerModel = models.ForeignKey(TelephoneModel, verbose_name='Модель источника бесперебойного писатния',on_delete=models.CASCADE, blank=True)
+    powerModel = models.ForeignKey(TelephoneModel, verbose_name='Модель источника бесперебойного писатния',
+                                   on_delete=models.CASCADE, blank=True)
 
     class Meta:
         verbose_name = 'Источник бесперебойного питания'
@@ -150,16 +148,17 @@ class Power(Product):
 
 
 class ActWorkSpace(Act):
+    person = models.ForeignKey(Persons, models.CASCADE, verbose_name='Пользователь')
     monitor = models.ForeignKey(Monitor, models.CASCADE, verbose_name='Монитор')
     pc = models.ForeignKey(PC, models.CASCADE, verbose_name='Системный блок')
     token = models.ForeignKey(Token, models.CASCADE, verbose_name='Токен')
     telephone = models.ForeignKey(Telephone, verbose_name='Телефон', on_delete=models.CASCADE, blank=True, null=True)
-    power = models.ForeignKey(Power, verbose_name='Источник бесперебойного питания', on_delete=models.CASCADE, blank=True, null=True)
+    power = models.ForeignKey(Power, verbose_name='Источник бесперебойного питания', on_delete=models.CASCADE,
+                              blank=True, null=True)
 
     class Meta:
         verbose_name = 'Акт'
         verbose_name_plural = 'Акты'
-
 
     def __str__(self):
         return self.number

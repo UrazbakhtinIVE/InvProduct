@@ -14,21 +14,14 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Фамилия</th>
-        <th>Имя</th>
-         <th>Отчество</th>
-           <th>Телефон</th>
-        <th>Email</th>
+        <th>Модель принтера</th>
       </tr>
     </thead>
-     {% for person in persons %}
+     {% for p in printer %}
       <tbody>
             <tr>
-                <td> <a href="#">{{person.firstName }}</a></td>
-                <td> {{person.lastName }} </td>
-                <td> {{person.fatherName }} </td>
-                 <td> {{person.workTelephone }} </td>
-                <td>{{person.email }}</td>
+                <td> {{p.printerModel }}</td>
+
             </tr>
       </tbody>
       {% endfor %}

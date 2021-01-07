@@ -69,7 +69,7 @@ class PowerAdmin(admin.ModelAdmin):
 
 @admin.register(ActWorkSpace)
 class ActWorkSpaceAdmin(admin.ModelAdmin):
-    list_display = ['number', 'person', 'date']
+    list_display = ['number', 'date']
 
 @admin.register(WorkSpaceSchedule)
 class WorkSpaceScheduleAdmin(admin.ModelAdmin):
