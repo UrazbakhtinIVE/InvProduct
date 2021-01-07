@@ -1,6 +1,4 @@
 from django.urls import reverse
-
-from locations.models import Room
 from mainapp.models import *
 
 
@@ -26,12 +24,19 @@ class CartridgeStatus(Status):
         return self.name
 
 
+class Type(models.Model):
+    name = models.CharField(max_length=30, verbose_name="Наименование")
+
+    class Meta:
+        verbose_name = "Тип принтера"
+        verbose_name_plural = "Типы принтеров"
+
+    def __str__(self):
+        return self.name
+
+
 class PrinterModel(ProductModel):
-    CHOICES = (
-        ('l', 'Лазерный'),
-        ('s', 'Струйныйй'),
-    )
-    type = models.CharField(max_length=20, choices=CHOICES, verbose_name='Тип принтера')
+    type = models.ForeignKey(Type,on_delete=models.CASCADE,  verbose_name='Тип принтера', null=True)
     firm = models.ForeignKey(Firm, on_delete=models.CASCADE, verbose_name="Производитель")
     image = models.ImageField(verbose_name='Изображение')
 
@@ -88,6 +93,9 @@ class Printer(Product):
         verbose_name = 'Принтер'
         verbose_name_plural = 'Принтеры'
 
+    def get_absolute_url(self):
+        return reverse('printerList')
+
     def __str__(self):
         return self.serialNumber
 
@@ -119,7 +127,6 @@ class PrinterAct(Act):
         verbose_name_plural = "Акты передачи принтеров"
 
 
-
 class CatrigeAct(Act):
     catrige = models.ManyToManyField(Cartridge, verbose_name="Картридж")
 
@@ -129,4 +136,3 @@ class CatrigeAct(Act):
     class Meta:
         verbose_name = "Акт передачи картриджа"
         verbose_name_plural = "Акты передачи картриджей"
-

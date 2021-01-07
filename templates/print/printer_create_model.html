@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                     <div class="wrap-form">
+                        {% csrf_token %}
+                         <label>Название модели принтера</label>
+                         <p>{{ form.name }}</p>
+                         <label>Тип принтера</label>
+                         <p>{{ form.type }}</p>
+                         <label>Производитель</label>
+                         <p>{{ form.firm }}</p>
+
+                          <button type="submit" class="btn btn-outline-secondary">Сохранить</button>
+                    </div>
+                </div>
+
+                 <div class="col"></div>
+                <div class="col"></div>
+
+
+
+            </div>
+        </div>
+
+
+    {% endblock %}
+
+    {% block footer %}
+
+    {% endblock %}

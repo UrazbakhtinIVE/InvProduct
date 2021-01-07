@@ -17,6 +17,11 @@ class PrinterModelAdmin(admin.ModelAdmin):
     list_display = ['name']
 
 
+@admin.register(Type)
+class PrinterTypeAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
 @admin.register(Color)
 class PrinterModelAdmin(admin.ModelAdmin):
     list_display = ['name']

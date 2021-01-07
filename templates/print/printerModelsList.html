@@ -5,23 +5,26 @@
         {% include 'header.html' %}
     {% endblock %}
 
-    {% block title %}Список пользователей{% endblock %}
+    {% block title %}Список моделей принтеров{% endblock %}
 
     {% block content %}
          <div class="container">
-  <h2>Список пользователей</h2>
-             <a href="{% url 'printer_create' %}">Добавить</a>
+  <h2>Список моделей принтеров</h2>
+             <a href="{% url 'printer_model_create' %}">Добавить</a>
   <table class="table">
     <thead>
       <tr>
         <th>Модель принтера</th>
+        <th>Тип принтера</th>
+        <th>Производитель</th>
       </tr>
     </thead>
      {% for p in pml %}
       <tbody>
             <tr>
-                <td> {{p.printerModel }}</td>
-
+                <td> {{p.name}}</td>
+                <td> {{p.type.name}}</td>
+                <td> {{p.firm.name}}</td>
             </tr>
       </tbody>
       {% endfor %}

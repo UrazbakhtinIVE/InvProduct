@@ -6,7 +6,6 @@
         {% include 'header.html' %}
     {% endblock %}
 
-
     {% block content %}
          <div class="wrap-card">
             <div class="container">
@@ -20,12 +19,26 @@
                             </div>
                     </div>
 
+
                     <div class="card" style="width: 14rem;">
                      <a href="#"><img src="{% static 'img/jurnal.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                                 <p class="card-text"><a class="link_for_img" href="#">Журнал принетров</a></p>
                             </div>
                     </div>
+
+
+
+
+
+                    <div class="card" style="width: 14rem;">
+                       <a href="{% url 'printer_model_list' %}"> <img src="{% static 'img/model_icon.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'printer_model_list' %}">Модели принтеров</a></p>
+                            </div>
+                    </div>
+
+
 
                     <div class="card" style="width: 14rem;">
                       <a href="#">  <img src="{% static 'img/pazz.png' %}" class="card-img-top" alt="..."> </a>
@@ -34,12 +47,12 @@
                             </div>
                     </div>
 
-                    <div class="card" style="width: 14rem;">
-                      <a href="#"> <img src="{% static 'img/setting.png' %}" class="card-img-top" alt="..."></a>
-                            <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="#">Ремонт</a></p>
-                            </div>
-                    </div>
+{#                    <div class="card" style="width: 14rem;">#}
+{#                      <a href="#"> <img src="{% static 'img/setting.png' %}" class="card-img-top" alt="..."></a>#}
+{#                            <div class="card-body">#}
+{#                                <p class="card-text"><a class="link_for_img" href="#">Ремонт</a></p>#}
+{#                            </div>#}
+{#                    </div>#}
                 </div>
                     </div>
             </div>

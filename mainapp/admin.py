@@ -8,5 +8,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 
+@admin.register(Firm)
+class FirmAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
+
+
+
+
 
 
