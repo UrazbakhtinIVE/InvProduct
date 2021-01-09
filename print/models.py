@@ -36,9 +36,9 @@ class Type(models.Model):
 
 
 class PrinterModel(ProductModel):
-    type = models.ForeignKey(Type,on_delete=models.CASCADE,  verbose_name='Тип принтера', null=True)
+    type = models.ForeignKey(Type, on_delete=models.CASCADE, verbose_name='Тип принтера', null=True)
     firm = models.ForeignKey(Firm, on_delete=models.CASCADE, verbose_name="Производитель")
-    image = models.ImageField(verbose_name='Изображение')
+    image = models.ImageField(verbose_name='Изображение', blank=True)
 
     class Meta:
         verbose_name = 'Модель принтера'
@@ -46,6 +46,10 @@ class PrinterModel(ProductModel):
 
     def __str__(self):
         return self.name
+
+
+    def get_absolute_url(self):
+        return reverse('printer_model_list')
 
 
 class Color(models.Model):
@@ -87,14 +91,15 @@ class Printer(Product):
     name = models.CharField(max_length=100, verbose_name="имя принтера в сети")
     ip = models.CharField(max_length=15, verbose_name="ip-адрес")
     status = models.ForeignKey(PrinterStatus, models.CASCADE, verbose_name="Статус принтера")
-    cartridge = models.ManyToManyField(Cartridge, verbose_name='Установленые картриджи')
+    location = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True)
+    cartridge = models.ManyToManyField(Cartridge, verbose_name='Установленые картриджи', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Принтер'
         verbose_name_plural = 'Принтеры'
 
     def get_absolute_url(self):
-        return reverse('printerList')
+        return reverse('printer_list')
 
     def __str__(self):
         return self.serialNumber
@@ -109,7 +114,8 @@ class PrinterSchedule(Schedule):
         verbose_name = "Журнал принтера"
         verbose_name_plural = "Журналы принтеров"
 
-    def get_absolute_url(self):
+    @staticmethod
+    def get_absolute_url():
         return reverse('printerScheduleList')
 
     def __str__(self):
@@ -120,7 +126,8 @@ class PrinterAct(Act):
     printer = models.ManyToManyField(Printer, verbose_name='Серийный номер')
 
     def __str__(self):
-        return self.printer.serialNumber
+        return self.printer.name
+        
 
     class Meta:
         verbose_name = "Акт передачи принтера"

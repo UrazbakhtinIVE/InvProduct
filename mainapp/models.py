@@ -41,7 +41,6 @@ class Status(models.Model):
 
 
 class Product(models.Model):
-    location = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True)
     category = models.ForeignKey(Category, models.CASCADE, verbose_name="Категория")
     serialNumber = models.CharField(max_length=100, verbose_name="Серийный номер", unique=True)
 

@@ -11,9 +11,10 @@ class PrinterCreateForm(forms.ModelForm):
             'category': forms.Select(attrs={'class': 'form-control'}),
             'printerModel': forms.Select(attrs={'class': 'form-control'}),
             'serialNumber': forms.TextInput(attrs={'class': 'form-control'}),
-            'name':  forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
             'ip': forms.TextInput(attrs={'class': 'form-control'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
+            'location': forms.Select(attrs={'class': 'form-control'}),
             'cartridge': forms.Select(attrs={'class': 'form-control'}),
         }
 
@@ -24,29 +25,22 @@ class PrinterModelCreateForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'name':  forms.TextInput(attrs={'class': 'form-control'}),
-            'type':  forms.Select(attrs={'class': 'form-control'}),
-            'firm':  forms.Select(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'type': forms.Select(attrs={'class': 'form-control'}),
+            'firm': forms.Select(attrs={'class': 'form-control'}),
         }
 
 
+class PrinterModelUpdateForm(forms.ModelForm):
+    class Meta:
+        model = PrinterModel
+        fields = ('name', 'type', 'firm')
 
-
-# class PrinterModel(forms.ModelForm):
-#     class Meta:
-#         model = PrinterModel
-#         fields = '__all__'
-#
-#         widgets = {
-#             'type': forms.Select(attrs={'class': 'form-control'}),
-#             'firm': forms.Select(attrs={'class': 'form-control'}),
-#
-#         }
-#
-
-
-
-
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'type': forms.Select(attrs={'class': 'form-control'}),
+            'firm': forms.Select(attrs={'class': 'form-control'}),
+        }
 
 # class PrinterScheduleCreateForm(forms.ModelForm):
 #     class Meta:

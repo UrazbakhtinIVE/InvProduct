@@ -17,14 +17,20 @@
         <th>Модель принтера</th>
         <th>Тип принтера</th>
         <th>Производитель</th>
+        <th>Действие</th>
+        
       </tr>
     </thead>
      {% for p in pml %}
       <tbody>
             <tr>
-                <td> {{p.name}}</td>
+                <td><a href="{% url 'printer_model_detile' pk=p.pk %}">{{p.name}}</a></td>
                 <td> {{p.type.name}}</td>
                 <td> {{p.firm.name}}</td>
+                <td>
+                    <a href="{% url 'printer_model_update' pk=p.pk %}">редактировать</a>
+                    <a href="{% url 'printer_model_delete' pk=p.pk %}">удалить</a>
+                </td>
             </tr>
       </tbody>
       {% endfor %}
