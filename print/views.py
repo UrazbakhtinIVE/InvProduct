@@ -60,6 +60,10 @@ class PrinterUpdateView(UpdateView):
     success_url = reverse_lazy('printer_model_list')
 
 
+
+
+
+
 class PrinterScheduleView(ListView):
     model = PrinterSchedule
     template_name = 'print/printer_schedule_list.html'
