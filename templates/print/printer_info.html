@@ -15,7 +15,7 @@
                        <a href="{% url 'printer_list' %}"> <img src="{% static 'img/checklist.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                                 <p class="card-text"><a class="link_for_img" href="{% url 'printer_list' %}">Список принтеров</a></p>
-                                   <small> Общее колличество: {{ object_list }}</small>
+                                   <small> Общее колличество: {{ object_list.count }}</small>
                             </div>
                     </div>
 
@@ -23,7 +23,7 @@
                     <div class="card" style="width: 14rem;">
                      <a href="{% url 'printer_schedule'%}"><img src="{% static 'img/jurnal.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="{% url 'printer_schedule'%}">Журнал принетров</a></p>
+                                <p class="card-text"><a class="link_for_img" href="{% url 'printer_schedule'%}">Журнал принтеров</a></p>
                             </div>
                     </div>
 

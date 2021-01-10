@@ -19,6 +19,16 @@ class PrinterCreateForm(forms.ModelForm):
         }
 
 
+class PrintetUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Printer
+        fields = '__all__'
+        widgets = {
+            'status': forms.Select(attrs={'class': 'form-control'}),
+            'location': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+
 class PrinterModelCreateForm(forms.ModelForm):
     class Meta:
         model = PrinterModel
@@ -29,6 +39,9 @@ class PrinterModelCreateForm(forms.ModelForm):
             'type': forms.Select(attrs={'class': 'form-control'}),
             'firm': forms.Select(attrs={'class': 'form-control'}),
         }
+
+
+
 
 
 class PrinterModelUpdateForm(forms.ModelForm):

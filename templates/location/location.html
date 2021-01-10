@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Месторасположения{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список помещений</h2>
+             <a href="#">Добавить</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Номер титула</th>
+        <th>Название титула</th>
+
+        <th>Отдел</th>
+          <th>Помещение</th>
+          <th>Этаж</th>
+        <th>Действие</th>
+
+      </tr>
+    </thead>
+     {% for l in loc %}
+      <tbody>
+            <tr>
+                <td>{{l.titul.number }}</td>
+
+                <td> {{l.titul.name }}</td>
+                <td> {{l.department.name }}</td>
+                <td>{{l.number }}</td>
+                <td> {{l.floor }}</td>
+                <td> <a href="#">Изменить</a>
+                    <a href="#">Удалить</a>
+                </td>
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

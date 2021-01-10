@@ -9,9 +9,9 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('home/', include('mainapp.urls')),
     path('print/', include('print.urls')),
-    path('persons/',include('personal.urls')),
+    path('persons/', include('personal.urls')),
     path('workspace/', include('workspace.urls')),
-
+    path('location/', include('locations.urls')),
 ]
 
 if settings.DEBUG:
