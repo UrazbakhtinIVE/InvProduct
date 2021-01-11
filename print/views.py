@@ -39,13 +39,6 @@ class PrinterDeleteView(DeleteView):
     context_object_name = 'pd'
     success_url = reverse_lazy('printer_list')
 
-class PrinterUpdateView(UpdateView):
-    model = Printer
-    template_name = 'print/printer_update.html'
-    form_class = 'PrintetUpdateForm'
-    context_object_name = 'psu'
-    # success_url = reverse_lazy('printer_list')
-
 
 class PrinterModelListView(ListView):
     model = PrinterModel
@@ -76,11 +69,36 @@ class PrinterModelDeleteView(DeleteView):
 
 
 class PrinterUpdateView(UpdateView):
+    model = Printer
+    template_name = 'print/printer_update.html'
+    form_class = PrinterUpdateForm
+    context_object_name = 'pmu'
+    success_url = reverse_lazy('printer_list')
+
+
+
+
+class PrinterUpdateStatusView(UpdateView):
+    model = Printer
+    template_name = 'print/printer_status_update.html'
+    form_class = PrinterUpdateStatusForm
+    context_object_name = 'pmus'
+    success_url = reverse_lazy('printer_list')
+
+
+
+
+
+class PrinterModelUpdateView(UpdateView):
     model = PrinterModel
     template_name = 'print/printer_model_update.html'
     form_class = PrinterModelUpdateForm
     context_object_name = 'pmu'
     success_url = reverse_lazy('printer_model_list')
+
+
+
+
 
 
 class PrinterScheduleView(ListView):

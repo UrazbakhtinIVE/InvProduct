@@ -19,14 +19,49 @@ class PrinterCreateForm(forms.ModelForm):
         }
 
 
-class PrintetUpdateForm(forms.ModelForm):
+class PrinterUpdateForm(forms.ModelForm):
     class Meta:
         model = Printer
-        fields = '__all__'
+        fields = ('status', 'location')
+
         widgets = {
+           
             'status': forms.Select(attrs={'class': 'form-control'}),
-            'location': forms.Select(attrs={'class': 'form-control'}),
+            'location': forms.Select(attrs={'class': 'form-control'}),   
         }
+
+class PrinterUpdateStatusForm(forms.ModelForm):
+    class Meta:
+        model = Printer
+        fields = ['status']
+
+        widgets = {
+            'status': forms.Select(attrs={'class': 'form-control'})  
+        }
+
+class PrinterUpdateLocationForm(forms.ModelForm):
+    class Meta:
+        model = Printer
+        fields = ['location']
+
+        widgets = {
+            'location': forms.Select(attrs={'class': 'form-control'}),   
+        }
+
+
+
+class PrinterModelUpdateForm(forms.ModelForm):
+    class Meta:
+        model = PrinterModel
+        fields = ('name', 'type', 'firm')
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'type': forms.Select(attrs={'class': 'form-control'}),
+            'firm': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+
 
 
 class PrinterModelCreateForm(forms.ModelForm):
@@ -44,16 +79,7 @@ class PrinterModelCreateForm(forms.ModelForm):
 
 
 
-class PrinterModelUpdateForm(forms.ModelForm):
-    class Meta:
-        model = PrinterModel
-        fields = ('name', 'type', 'firm')
 
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'type': forms.Select(attrs={'class': 'form-control'}),
-            'firm': forms.Select(attrs={'class': 'form-control'}),
-        }
 
 # class PrinterScheduleCreateForm(forms.ModelForm):
 #     class Meta:
