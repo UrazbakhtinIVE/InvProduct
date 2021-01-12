@@ -10,7 +10,7 @@
     {% block content %}
          <div class="container">
   <h2>Список заявок</h2>
-             <a href="#">Добавить</a>
+             <a href="{% url 'printer_shedule_create' %}">Добавить</a>
   <table class="table">
     <thead>
       <tr>
@@ -25,6 +25,10 @@
       <tbody>
             <tr>
                 <td> {{p.apper }}</td>
+                <td> {{p.printer }}</td>
+                <td> {{p.status }}</td>
+                <td> {{p.location }}</td>
+                <td> {{p.date }}</td>
 
             </tr>
       </tbody>

@@ -8,14 +8,15 @@
     {% block title %}Подробная информация о принтере{% endblock %}
 
     {% block content %}
-        <br>
+         <br>
         <div class="container">
             <div class="row">
-                <div class="col">
 
-    
 
-                    <h5>Информация о принтере с серийным номером:<strong>  {{ printer.serialNumber }}</strong></h5>
+                <h5>Информация о принтере с серийным номером: <strong class="serialnumbers">{{ printer.serialNumber }}</strong> </h5>
+                <div class="col-6">
+
+
                         <p><strong>Имя принтера:</strong> {{ printer.name }}</p>
                         <p><strong>Ip-адресс:</strong> {{ printer.ip }}</p>
                         <p><strong>Модель принтера:</strong> {{ printer.printerModel.name }}</p>
@@ -28,7 +29,8 @@
                         
                 </div>
 
-                <div class="col-sm">
+
+                <div class="col">
                      {%  if printer.printerModel.image %}
                         <img  class="img-printer_detile" src="{{ printer.printerModel.image.url }}"  alt="...">
                      {% else %}
@@ -37,7 +39,8 @@
                 </div>
 
 
-            </div>
+
+                </div>
         </div>
 
     {% endblock %}

@@ -7,17 +7,19 @@
 
 {% block content %}
     <div class="container">
-        <div class="col-2"><a href="{% url 'printer_model_list' %}">Назад</a></div>
+
         <div class="row">
-            <div class="col-sm">
+
+            <div class="col-5">
                 <div class="margin_detile">
+                    <div class="col"><a href="{% url 'printer_model_list' %}">Назад</a></div>
                     <h3>Информация:</h3>
                     <p><strong>Название модели принтера: </strong>  {{ pmd.name }}</p>
                     <p><strong>Производитель: </strong>  {{ pmd.firm.name }}</p>
                     <p><strong>Тип: </strong>  {{ pmd.type.name }}</p>
                 </div>
-                </div>
-                <div class="col-sm">
+            </div>
+                <div class="col">
                      {%  if pmd.image %}
                         <img  class="img-printer_detile" src="{{ pmd.image.url }}"  alt="...">
                      {% else %}

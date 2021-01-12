@@ -28,7 +28,7 @@ class PrinterDetileView(DetailView):
 
 class PrinterCreateView(CreateView):
     model = Printer
-    template_name = 'print/printer_create_form.html'
+    template_name = 'print/printer_create.html'
     form_class = PrinterCreateForm
     context_object_name = 'pcf'
 
@@ -100,11 +100,20 @@ class PrinterModelUpdateView(UpdateView):
 
 
 
-
-class PrinterScheduleView(ListView):
+class PrinterScheduleListView(ListView):
     model = PrinterSchedule
     template_name = 'print/printer_schedule_list.html'
     context_object_name = 'psl'
+
+
+
+
+class PrinterScheduleCreateView(CreateView):
+    model =  PrinterSchedule
+    template_name = 'print/printer_create_shedule.html'
+    form_class =PrinterScheduleCreateForm
+    success_url = reverse_lazy('printer_schedule')
+
 
 
 class CartridgeInfoView(TemplateView):
