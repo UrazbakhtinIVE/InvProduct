@@ -1,5 +1,5 @@
 from django.contrib import admin
-from locations.models import Titul, Room
+from locations.models import Room, Titul
 
 
 @admin.register(Titul)

@@ -14,18 +14,37 @@
                 <div class="row">
 
                     <div class="card" style="width: 14rem;">
-                       <a href="{% url 'print' %}"> <img src="{% static 'img/printer_.png' %}" class="card-img-top" alt="..."></a>
+                       <a href="{% url 'print' %}"> <img src="{% static 'img/print_.png' %}" class="card-img-top" alt="..."></a>
                             <div class="card-body">
-                                <p class="card-text"><a class="link_for_img" href="{% url 'print' %}">Печать</a></p>
+                                <p class="card-text"><a class="link_for_img" href="{% url 'print' %}">Печать </a></p>
                             </div>
                     </div>
 
-{#                    <div class="card" style="width: 14rem;">#}
-{#                     <a href="#"><img src="{% static 'img/pc_.png' %}" class="card-img-top" alt="..."></a>#}
-{#                            <div class="card-body">#}
-{#                                <p class="card-text"><a class="link_for_img" href="#">Рабочее место</a></p>#}
-{#                            </div>#}
-{#                    </div>#}
+
+
+                     <div class="card" style="width: 14rem;">
+                       <a href="{% url 'person' %}"> <img src="{% static 'img/users_person_.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Пользователи</a></p>
+
+                            </div>
+                    </div>
+
+
+
+                    <div class="card" style="width: 14rem;">
+                     <a href="{% url 'workspace' %}"><img src="{% static 'img/pc_.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'workspace' %}">Рабочее место</a></p>
+                            </div>
+                    </div>
+
+                     <div class="card" style="width: 14rem;">
+                     <a href="{% url 'loc' %}"><img src="{% static 'img/location.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'loc' %}">Локация</a></p>
+                            </div>
+                    </div>
                 </div>
                     </div>
             </div>

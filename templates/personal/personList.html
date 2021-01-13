@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Список пользователей{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список пользователей</h2>
+             <a href="#">Добавить</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+         <th>Отчество</th>
+           <th>Телефон</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+     {% for person in persons %}
+      <tbody>
+            <tr>
+                <td> <a href="#">{{person.firstName }}</a></td>
+                <td> {{person.lastName }} </td>
+                <td> {{person.fatherName }} </td>
+                 <td> {{person.workTelephone }} </td>
+                <td>{{person.email }}</td>
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

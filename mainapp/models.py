@@ -1,3 +1,4 @@
+from locations.models import Room
 from personal.models import *
 
 
@@ -73,12 +74,14 @@ class Schedule(models.Model):
 
 
 class Act(models.Model):
-    number = models.CharField(max_length=100, verbose_name="Номер акта")
-    person = models.ForeignKey(Person, models.CASCADE, verbose_name="Пользователь")
-    file = models.FileField(verbose_name='Акт передачи')
+    CHOICES = (
+        ('extradition', 'Выдача'),
+        ('pass', 'Сдача'),
+    )
+    type = models.CharField(max_length=20, choices=CHOICES, verbose_name='Тип акта', null=True)
+    number = models.CharField(max_length=100, verbose_name="Номер акта", unique=True)
+    file = models.FileField(verbose_name='Акт передачи', blank=True)
     date = models.DateField(verbose_name='Дата передачи')
-
 
     class Meta:
         abstract = True
-

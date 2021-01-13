@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                     <div class="wrap-form">
+                         <form method="post">
+                                <div class="container">
+                                    <div class="row">
+                                        {% csrf_token %}
+
+                                        <div class="col">
+                                            <label>Категория</label>
+                                            <p>{{ form.category}}</p>
+                                            <label>Модель</label>
+                                            <p>{{ form.printerModel }}</p>
+                                            <label>Серийный номер</label>
+                                            <p>{{ form.serialNumber }}</p>
+                                            <label>Имя принтера</label>
+                                            <p>{{ form.name }}</p>
+                                             <button  type="submit" class="btn btn-outline-secondary">Сохранить</button>
+                                        </div>
+                                            <div class="col">
+                                                <label>Ip-адресс</label>
+                                                <p>{{ form.ip }}</p>
+                                                 <label>Статус</label>
+                                                <p>{{ form.status }}</p>
+                                                 <label>Место расположение</label>
+                                                <p>{{ form.location }}</p>
+                                            </div>
+                                    </div>
+                                </div>
+
+
+                        </form>
+                     </div>
+                </div>
+                 <div class="col"></div>
+            </div>
+        </div>
+
+
+    {% endblock %}
+
+    {% block footer %}
+
+    {% endblock %}

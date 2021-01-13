@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Список моделей принтеров{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список моделей принтеров</h2>
+             <a href="{% url 'printer_model_create' %}">Добавить</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Модель принтера</th>
+        <th>Тип принтера</th>
+        <th>Производитель</th>
+        <th>Действие</th>
+        
+      </tr>
+    </thead>
+     {% for p in pml %}
+      <tbody>
+            <tr>
+                <td><a href="{% url 'printer_model_detile' pk=p.pk %}">{{p.name}}</a></td>
+                <td> {{p.type.name}}</td>
+                <td> {{p.firm.name}}</td>
+                <td>
+                    <a href="{% url 'printer_model_update' pk=p.pk %}">Изменить</a>
+                    <a href="{% url 'printer_model_delete' pk=p.pk %}">Удалить</a>
+                </td>
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

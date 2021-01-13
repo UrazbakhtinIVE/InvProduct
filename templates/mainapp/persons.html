@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Пользователи{% endblock %}
+
+    {% block content %}
+
+      <div class="wrap-card">
+            <div class="container">
+                <div class="row">
+
+                    <div class="card" style="width: 14rem;">
+                       <a href="{% url 'list_person' %}"> <img src="{% static 'img/contacts.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'list_person' %}">Контакты</a></p>
+
+                            </div>
+                    </div>
+                </div>
+                    </div>
+            </div>
+    {% endblock %}

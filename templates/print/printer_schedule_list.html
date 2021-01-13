@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Журнал принтеров{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Журнал принтеров</h2>
+             <a href="{% url 'printer_shedule_create' %}">Добавить</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Номер заявки</th>
+        <th>Серийный номер</th>
+        <th>Статус</th>
+        <th>Место расположение</th>
+        <th>Дата</th>
+      </tr>
+    </thead>
+     {% for p in psl %}
+      <tbody>
+            <tr>
+                <td> {{p.apper }}</td>
+                <td> {{p.printer }}</td>
+                <td> {{p.status }}</td>
+                <td> {{p.location }}</td>
+                <td> {{p.date }}</td>
+
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

@@ -1,0 +1,61 @@
+  
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+     {% block title %}Принтеры{% endblock %}
+    {% block content %}
+         <div class="wrap-card">
+            <div class="container">
+                <div class="row">
+
+                    <div class="card" style="width: 14rem;">
+                       <a href="{% url 'printer_list' %}"> <img src="{% static 'img/checklist.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'printer_list' %}">Список принтеров</a></p>
+                                   <small> Общее колличество: {{ object_list.count }}</small>
+                            </div>
+                    </div>
+
+
+                    <div class="card" style="width: 14rem;">
+                     <a href="{% url 'printer_schedule'%}"><img src="{% static 'img/jurnal.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'printer_schedule'%}">Журнал принтеров</a></p>
+                            </div>
+                    </div>
+
+
+
+
+
+                    <div class="card" style="width: 14rem;">
+                       <a href="{% url 'printer_model_list' %}"> <img src="{% static 'img/model_icon.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'printer_model_list' %}">Модели принтеров</a></p>
+                            </div>
+                    </div>
+
+
+
+                    <div class="card" style="width: 14rem;">
+                      <a href="#">  <img src="{% static 'img/pazz.png' %}" class="card-img-top" alt="..."> </a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Совместимость</a></p>
+                            </div>
+                    </div>
+
+{#                    <div class="card" style="width: 14rem;">#}
+{#                      <a href="#"> <img src="{% static 'img/setting.png' %}" class="card-img-top" alt="..."></a>#}
+{#                            <div class="card-body">#}
+{#                                <p class="card-text"><a class="link_for_img" href="#">Ремонт</a></p>#}
+{#                            </div>#}
+{#                    </div>#}
+                </div>
+                    </div>
+            </div>
+        </div>
+
+    {% endblock %}

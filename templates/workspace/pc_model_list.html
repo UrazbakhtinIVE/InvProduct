@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Список моделей системных блоков{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список пользователей</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Название модели</th>
+      </tr>
+    </thead>
+     {% for model in pcModel %}
+      <tbody>
+            <tr>
+                <td>{{model.name }}</td>
+
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

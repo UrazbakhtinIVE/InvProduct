@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Список  системных блоков{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список системных блоков</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Серийный номер</th>
+
+          <th>Статус</th>
+      </tr>
+    </thead>
+     {% for p in pc %}
+      <tbody>
+            <tr>
+                <td>{{p.serialNumber }}</td>
+                <td>{{p.status }}</td>
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}
