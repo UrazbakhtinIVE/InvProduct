@@ -107,7 +107,6 @@ class PrinterScheduleListView(ListView):
 
 
 
-
 class PrinterScheduleCreateView(CreateView):
     model =  PrinterSchedule
     template_name = 'print/printer_create_shedule.html'
@@ -116,5 +115,14 @@ class PrinterScheduleCreateView(CreateView):
 
 
 
+
+
+
 class CartridgeInfoView(TemplateView):
     pass
+
+
+
+
+
+

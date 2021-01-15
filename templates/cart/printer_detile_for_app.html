@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Подробная информация  для исполнения заявки{% endblock %}
+
+    {% block content %}
+         <br>
+        <div class="container">
+            
+            <h5>Подробная информация о заявке: <strong class="serialnumbers">{{ printer_shedule_detile.apper }}</strong> </h5>
+            <div class="row">
+
+                <div class="col">
+                    <p><strong>Модель принтера:</strong> {{ printer_shedule_detile.printer.printerModel.name }}</p>
+                        <p><strong>Производитель:</strong> {{ printer_shedule_detile.printer.printerModel.firm.name }}</p>
+                        <p><strong>Серийный номер принтера</strong> {{ printer_shedule_detile.printer.serialNumber }}</p>
+                        <p><strong>Описание заявки:</strong>{{ printer_shedule_detile.description }} </p>
+                        <h3>Месторасположение</h3>
+                         <p><strong>Отдел:</strong> {{ printer_shedule_detile.printer.location.department.name }}</p>
+                        <p><strong>Титул:</strong> {{ printer_shedule_detile.printer.location.titul.name }}</p>
+                        <p><strong>Кабинет:</strong> {{ printer_shedule_detile.printer.location.number }}
+                            <br><br>
+                            <a href="#"><button class="btn btn-outline-secondary">Выполнить</button></a>
+
+                    <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="wrap-form">
+                                         <form method="post">
+                                            <div class="container">
+                                                <div class="row">
+
+
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+                <div class="col">
+                     {%  if printer_shedule_detile.printer.printerModel.image %}
+                        <img  class="img-printer_detile" src="{{ printer_shedule_detile.printer.printerModel.image.url }}"  alt="...">
+                     {% else %}
+                        <img  src="{% static 'img/print.png' %}" class="card-img" alt="...">
+                     {% endif %}
+                </div>
+            
+                </div>
+        </div>
+
+    {% endblock %}

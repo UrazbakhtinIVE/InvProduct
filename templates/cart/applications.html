@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+    {% block title %}Информация об печатных устройствах {% endblock %}
+
+    {% block content %}
+          <div class="wrap-card">
+            <div class="container">
+                <div class="row">
+
+                    <div class="card" style="width: 14rem;">
+                       <a href="{% url 'app_printer_shedule' %}"> <img src="{% static 'img/setting.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="{% url 'app_printer_shedule' %}">Ремонт принтеров</a></p>
+                            </div>
+                    </div>
+
+                    <div class="card" style="width: 14rem;">
+                     <a href="#"><img src="{% static 'img/rain_.png' %}" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <p class="card-text"><a class="link_for_img" href="#">Заправка картриджей</a></p>
+                            </div>
+                    </div>
+
+
+
+                </div>
+                    </div>
+            </div>
+    {% endblock %}

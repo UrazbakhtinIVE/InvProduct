@@ -47,7 +47,6 @@ class PrinterModel(ProductModel):
     def __str__(self):
         return self.name
 
-
     def get_absolute_url(self):
         return reverse('printer_model_list')
 
@@ -119,7 +118,21 @@ class PrinterSchedule(Schedule):
         return reverse('printerScheduleList')
 
     def __str__(self):
-        return self.printer.name
+        return self.apper
+
+
+class PrinterApp(Applications):
+    printerShedule = models.ForeignKey(PrinterSchedule, models.CASCADE, verbose_name='Заявка из журнала')
+
+    class Meta:
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявки'
+
+    def __str__(self):
+        return self.printerShedule.apper
+
+
+
 
 
 class PrinterAct(Act):
@@ -127,7 +140,6 @@ class PrinterAct(Act):
 
     def __str__(self):
         return self.printer.name
-        
 
     class Meta:
         verbose_name = "Акт передачи принтера"

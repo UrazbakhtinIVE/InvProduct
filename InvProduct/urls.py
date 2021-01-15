@@ -12,6 +12,7 @@ urlpatterns = [
     path('persons/', include('personal.urls')),
     path('workspace/', include('workspace.urls')),
     path('location/', include('locations.urls')),
+    path('printapp/', include('cart.urls'))
 ]
 
 if settings.DEBUG:

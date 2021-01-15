@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'personal',
     'workspace',
     'print',
-    'carts',
+    'cart',
 ]
 
 MIDDLEWARE = [

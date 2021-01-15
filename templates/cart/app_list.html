@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block  header%}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    {% block title %}Список заявок{% endblock %}
+
+    {% block content %}
+         <div class="container">
+  <h2>Список заявок для обслживания</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Заявка</th>
+        <th>Серийный номер</th>
+          <th>Статус</th>
+
+      </tr>
+    </thead>
+     {% for p in printer_shedule_list_app %}
+      <tbody>
+            <tr>
+                <td><a href="{% url 'shedule_app_detile' pk=p.pk %}">{{p.apper }}</a></td>
+                <td><p class="printer serialNumber">{{p.printer.serialNumber}}</p></td>
+                <td>{{p.status}} </td>
+
+            </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    {% endblock %}

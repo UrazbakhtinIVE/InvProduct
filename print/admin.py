@@ -52,3 +52,9 @@ class PrinterScheduleAdmin(admin.ModelAdmin):
 class PrinterActAdmin(admin.ModelAdmin):
     list_display = ['number']
 
+
+
+@admin.register(PrinterApp)
+class PrinterActAdmin(admin.ModelAdmin):
+    list_display = ['id']
+

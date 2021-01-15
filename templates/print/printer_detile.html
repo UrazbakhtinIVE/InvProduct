@@ -10,13 +10,12 @@
     {% block content %}
          <br>
         <div class="container">
+            
+            <h5>Информация о принтере с серийным номером: <strong class="serialnumbers">{{ printer.serialNumber }}</strong> </h5>
             <div class="row">
 
-
-                <h5>Информация о принтере с серийным номером: <strong class="serialnumbers">{{ printer.serialNumber }}</strong> </h5>
-                <div class="col-6">
-
-
+                
+                <div class="col">
                         <p><strong>Имя принтера:</strong> {{ printer.name }}</p>
                         <p><strong>Ip-адресс:</strong> {{ printer.ip }}</p>
                         <p><strong>Модель принтера:</strong> {{ printer.printerModel.name }}</p>
@@ -27,6 +26,8 @@
                         <p><strong>Титул:</strong> {{ printer.location.titul.name }}</p>
                         <p><strong>Кабинет:</strong> {{ printer.location.number }}
                         
+                            
+                            <!-- <button type="submit" class="btn btn-outline-dark">Добавить</button> -->
                 </div>
 
 
@@ -37,9 +38,7 @@
                         <img  src="{% static 'img/print.png' %}" class="card-img" alt="...">
                      {% endif %}
                 </div>
-
-
-
+            
                 </div>
         </div>
 

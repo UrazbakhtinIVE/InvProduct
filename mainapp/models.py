@@ -52,10 +52,9 @@ class Product(models.Model):
 
 
 class Applications(models.Model):
-    number = models.CharField(max_length=100, verbose_name="Номер заявки", unique=True)
     descriptions = models.TextField(verbose_name="Описание")
     date = models.DateField(auto_now_add=True)
-    status = models.BooleanField(verbose_name="Выполнена")
+    status = models.BooleanField(verbose_name="Выполнена", default=False)
 
     class Meta:
         abstract = True
