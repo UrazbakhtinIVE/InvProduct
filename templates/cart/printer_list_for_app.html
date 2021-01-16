@@ -13,18 +13,18 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Заявка</th>
-          <th>Дата</th>
-          <th>Статус</th>
+            <th>№</th>
+            <th>№ заявки в журнале</th>
+            <th>Дата</th>
+            <th>Статус</th>
 
       </tr>
     </thead>
      {% for app in printer_app %}
       <tbody>
             <tr>
-{#                {% url 'shedule_app_detile' pk=app.printerShedule.pk %}#}
-                <td><a href="#">{{ app.printerShedule }}</a></td>
-                
+                <td><a href="#">{{ app.pk }}</a></td>
+                <td>{{ app.printerShedule }}</td>
                 <td>{{app.date }}</td>
                 <td>{{app.status }}</td>
             </tr>

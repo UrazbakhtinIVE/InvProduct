@@ -105,6 +105,10 @@ class PrinterScheduleListView(ListView):
     template_name = 'print/printer_schedule_list.html'
     context_object_name = 'psl'
 
+class PrinterSheduleDetileView(DetailView):
+    model = PrinterSchedule
+    template_name = 'print/printer_shedule_detile.html'
+    context_object_name = 'psd'
 
 
 class PrinterScheduleCreateView(CreateView):

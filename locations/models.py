@@ -28,4 +28,4 @@ class Room(models.Model):
         db_table = "Room"
 
     def __str__(self):
-        return "Кабинет {} {}".format(  self.number, self.titul.name)
+        return self.number

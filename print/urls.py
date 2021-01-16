@@ -1,5 +1,7 @@
 from django.urls import path
 from django.contrib.auth.decorators import login_required
+
+from cart.views import PrinterAppDetile
 from .views import *
 from .views import *
 
@@ -23,7 +25,13 @@ urlpatterns = [
     path('printers/model/create/', login_required(CreatePrinterModelView.as_view()), name='printer_model_create'),
     path('printers/model/update/<int:pk>/', login_required(PrinterModelUpdateView.as_view()), name='printer_model_update'),
     path('printers/schedule/list/', login_required(PrinterScheduleListView.as_view()), name='printer_schedule'),
+    path('printers/schedule/detile/<int:pk>/', login_required(PrinterSheduleDetileView.as_view()), name='printer_schedule_detile'),
+
+    path('cart/app/detile/<int:pk>/', login_required(PrinterAppDetile.as_view()), name='printer_schedule_detile'),
+
     path('printers/model/delete/<int:pk>/', login_required(PrinterModelDeleteView.as_view()), name='printer_model_delete'),
     path('cartridges/', login_required(CartridgeInfoView.as_view()), name='cartridge'),
+
+
 
 ]

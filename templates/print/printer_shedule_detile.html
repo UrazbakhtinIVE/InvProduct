@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block  header%}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col-6">
+
+                 <div class="col"><a class="serialnumbers" href="{% url 'printer_schedule' %}">Назад</a></div>
+               <br>
+                 <h3>Подробная информация о заявке {{ psd.apper }} </h3>
+                <div class="margin_detile">
+
+
+
+                    <p><strong>Серийный номер:{{ psd.printer.serialNumber }} </strong> </p>
+                    <p><strong>Модель: </strong>  {{ psd.printer.printerModel }}</p>
+                    <p><strong>Производитель: </strong>  {{ psd.printer.printerModel.firm }}</p>
+                    <p><strong>Описание: </strong>  {{ psd.description }}</p>
+                    <h3>Месторасположение</h3>
+
+                    <p><strong>Титул: </strong>  {{ psd.location.titul.name }}</p>
+                    <p><strong>Кабинет: </strong>  {{ psd.location }}</p>
+
+                </div>
+            </div>
+{#                <div class="col">#}
+{#                     {%  if pmd.image %}#}
+{#                        <img  class="img-printer_detile" src="{{ pmd.image.url }}"  alt="...">#}
+{#                     {% else %}#}
+{#                        <img  src="{% static 'img/print.png' %}" class="card-img" alt="...">#}
+{#                     {% endif %}#}
+{#                </div>#}
+        </div>
+    </div>
+
+    {% endblock %}

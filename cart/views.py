@@ -16,6 +16,7 @@ class ApplicationsView(TemplateView):
 #     template_name='cart/printer_list_for_app.html'
 
 
+
 class PrinterAppViewList(ListView):
     model = PrinterApp
     queryset = PrinterApp.objects.all()
@@ -50,4 +51,7 @@ class PrinterSheduleUpdateStatusAppView(UpdateView):
 
 
 
-
+class PrinterAppDetile(DetailView):
+    model = PrinterApp.objects.all()
+    context_object_name = 'appdet'
+    template_name = 'cart/printer_list_for_app.html'

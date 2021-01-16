@@ -17,17 +17,15 @@
         <th>Номер заявки</th>
         <th>Серийный номер</th>
         <th>Статус</th>
-        <th>Место расположение</th>
         <th>Дата</th>
       </tr>
     </thead>
      {% for p in psl %}
       <tbody>
             <tr>
-                <td> {{p.apper }}</td>
+                <td><a href="{% url 'printer_schedule_detile' pk=p.pk %}">{{p.apper}}</a> </td>
                 <td> {{p.printer }}</td>
                 <td> {{p.status }}</td>
-                <td> {{p.location }}</td>
                 <td> {{p.date }}</td>
 
             </tr>
