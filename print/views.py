@@ -1,5 +1,4 @@
 from django.views.generic import *
-from .models import PrinterModel
 from .forms import *
 from django.urls import reverse_lazy
 

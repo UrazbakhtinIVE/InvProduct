@@ -2,7 +2,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from pip._vendor.html5lib.constants import namespaces
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,7 +12,6 @@ urlpatterns = [
     path('persons/', include('personal.urls')),
     path('workspace/', include('workspace.urls')),
     path('location/', include('locations.urls')),
-    path('printapp/', include('cart.urls'))
 ]
 
 if settings.DEBUG:

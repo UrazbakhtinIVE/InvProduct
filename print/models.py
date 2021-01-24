@@ -91,7 +91,7 @@ class Printer(Product):
     ip = models.CharField(max_length=15, verbose_name="ip-адрес")
     status = models.ForeignKey(PrinterStatus, models.CASCADE, verbose_name="Статус принтера")
     location = models.ForeignKey(Room, models.CASCADE, verbose_name="Место расположение", null=True)
-    cartridge = models.ManyToManyField(Cartridge, verbose_name='Установленые картриджи', blank=True, null=True)
+    cartridge = models.ManyToManyField(Cartridge, verbose_name='Установленые картриджи', blank=True)
 
     class Meta:
         verbose_name = 'Принтер'
